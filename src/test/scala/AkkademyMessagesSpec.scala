@@ -9,8 +9,19 @@ class AkkademyMessagesSpec extends FlatSpec with Matchers {
         request.value should === ("value")
     }
 
+    "SetIfNotExistsRequest message" should "retain key and value" in {
+        val request = SetIfNotExistsRequest("key", "value")
+        request.key should === ("key")
+        request.value should === ("value")
+    }
+
     "GetRequest message" should "retain key" in {
         val request = GetRequest("key")
+        request.key should === ("key")
+    }
+
+    "DeleteRequest message" should "retain key" in {
+        val request = DeleteRequest("key")
         request.key should === ("key")
     }
 
